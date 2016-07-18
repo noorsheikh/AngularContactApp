@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="contactApp">
+	<head>
+		<meta chartset="UTF-8">
+		<title>Angular Contacts App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- Declare the Angular.min.js for Angular Javascript based Framework -->
+		<script src="lib/angular/angular.min.js"></script>
+
+		<script src="js/controllers.js"></script>
+
+		<!-- Declare the w3.css file for W3 CSS Framework -->
+		<link href="lib/w3/w3.css" rel="stylesheet">
+
+		<link href="public/css/style.css" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<div class="w3-container">
+			<div class="w3-row-padding w3-content w3-teal">
+				<div class="w3-col m12">
+				<h1>Angular Contacts Application</h1>
+				</div>
+			</div>
+		</div>
+		<div class="w3-container" ng-controller="myController">
+			<div class="w3-row-padding w3-content" ng-repeat="contact in contacts">
+				<div class="w3-col m12 w3-section">
+					<div class="w3-card-2 w3-center">
+						<img class="w3-circle w3-border" src="{{ contact.picture.large }}">
+						<h1 class="w3-large capitalize">{{ contact.name.title}}. {{ contact.name.first }} {{ contact.name.last }}</h1>
+						<h2 class="w3-small capitalize">{{ contact.email }}</h2>
+						<h2 class="w3-small capitalize">{{ contact.phone }}</h2>
+						<div class="w3-container w3-teal">
+							<h3 class="w3-medium capitalize">{{ contact.location.street }}, {{ contact.location.city }}</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

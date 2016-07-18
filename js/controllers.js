@@ -1,0 +1,648 @@
+// Declare the module for the main ng-app directive
+var app = angular.module("contactApp", []);
+
+// Declare myController controller
+app.controller("myController", function($scope) {
+	$scope.contacts = [
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "rosemarie",
+	      "last": "gerding"
+	    },
+	    "location": {
+	      "street": "9236 biltsche grift",
+	      "city": "mill en sint hubert",
+	      "state": "limburg",
+	      "postcode": 99609
+	    },
+	    "email": "rosemarie.gerding@example.com",
+	    "phone": "(805)-935-2962",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/93.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/93.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/93.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "antonino",
+	      "last": "peixoto"
+	    },
+	    "location": {
+	      "street": "6453 rua dom pedro ii ",
+	      "city": "são caetano do sul",
+	      "state": "santa catarina",
+	      "postcode": 62237
+	    },
+	    "email": "antonino.peixoto@example.com",
+	    "phone": "(34) 3529-5539",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/73.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/73.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/73.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "calvin",
+	      "last": "carpenter"
+	    },
+	    "location": {
+	      "street": "5970 pearse street",
+	      "city": "ballina",
+	      "state": "laois",
+	      "postcode": 98899
+	    },
+	    "email": "calvin.carpenter@example.com",
+	    "phone": "071-950-0191",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/76.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/76.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/76.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mademoiselle",
+	      "first": "rachel",
+	      "last": "garnier"
+	    },
+	    "location": {
+	      "street": "6512 avenue debrousse",
+	      "city": "oulens-sous-echallens",
+	      "state": "graubünden",
+	      "postcode": 4568
+	    },
+	    "email": "rachel.garnier@example.com",
+	    "phone": "(546)-119-3676",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/56.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/56.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/56.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "monsieur",
+	      "first": "mathias",
+	      "last": "masson"
+	    },
+	    "location": {
+	      "street": "2798 rue de bonnel",
+	      "city": "renens vd 1",
+	      "state": "nidwalden",
+	      "postcode": 2482
+	    },
+	    "email": "mathias.masson@example.com",
+	    "phone": "(817)-079-5108",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/88.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/88.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/88.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "vaíse",
+	      "last": "nunes"
+	    },
+	    "location": {
+	      "street": "8063 rua dezenove de outubro",
+	      "city": "novo hamburgo",
+	      "state": "rio grande do sul",
+	      "postcode": 88047
+	    },
+	    "email": "vaíse.nunes@example.com",
+	    "phone": "(65) 7030-2576",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/83.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/83.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/83.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "benjamin",
+	      "last": "williams"
+	    },
+	    "location": {
+	      "street": "3150 bay view road",
+	      "city": "whanganui",
+	      "state": "waikato",
+	      "postcode": 61112
+	    },
+	    "email": "benjamin.williams@example.com",
+	    "phone": "(005)-575-4931",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/41.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/41.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/41.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "miss",
+	      "first": "eva",
+	      "last": "white"
+	    },
+	    "location": {
+	      "street": "6733 wilson road",
+	      "city": "tauranga",
+	      "state": "gisborne",
+	      "postcode": 19840
+	    },
+	    "email": "eva.white@example.com",
+	    "phone": "(883)-850-6549",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/71.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/71.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/71.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mademoiselle",
+	      "first": "léane",
+	      "last": "bertrand"
+	    },
+	    "location": {
+	      "street": "4263 avenue du château",
+	      "city": "oulens-sous-echallens",
+	      "state": "schwyz",
+	      "postcode": 6679
+	    },
+	    "email": "léane.bertrand@example.com",
+	    "phone": "(279)-556-4043",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/20.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/20.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/20.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "latife",
+	      "last": "çetin"
+	    },
+	    "location": {
+	      "street": "2834 maçka cd",
+	      "city": "denizli",
+	      "state": "elazığ",
+	      "postcode": 41665
+	    },
+	    "email": "latife.çetin@example.com",
+	    "phone": "(681)-587-2705",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/19.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/19.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/19.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "catherine",
+	      "last": "castillo"
+	    },
+	    "location": {
+	      "street": "1641 manchester road",
+	      "city": "lisburn",
+	      "state": "west glamorgan",
+	      "postcode": "I6 8XW"
+	    },
+	    "email": "catherine.castillo@example.com",
+	    "phone": "017683 21989",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/12.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/12.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/12.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "luz",
+	      "last": "cabrera"
+	    },
+	    "location": {
+	      "street": "5100 avenida del planetario",
+	      "city": "valladolid",
+	      "state": "navarra",
+	      "postcode": 76045
+	    },
+	    "email": "luz.cabrera@example.com",
+	    "phone": "995-923-340",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/67.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/67.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/67.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "erika",
+	      "last": "parker"
+	    },
+	    "location": {
+	      "street": "6139 e little york rd",
+	      "city": "australian capital territory",
+	      "state": "queensland",
+	      "postcode": 8106
+	    },
+	    "email": "erika.parker@example.com",
+	    "phone": "01-4086-1190",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/47.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/47.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/47.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "juanita",
+	      "last": "deijkers"
+	    },
+	    "location": {
+	      "street": "8400 domstraat",
+	      "city": "hoorn",
+	      "state": "zuid-holland",
+	      "postcode": 53403
+	    },
+	    "email": "juanita.deijkers@example.com",
+	    "phone": "(163)-967-7812",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/9.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/9.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/9.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "melike",
+	      "last": "saygıner"
+	    },
+	    "location": {
+	      "street": "3119 şehitler cd",
+	      "city": "kahramanmaraş",
+	      "state": "gümüşhane",
+	      "postcode": 19606
+	    },
+	    "email": "melike.saygıner@example.com",
+	    "phone": "(021)-534-9094",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/95.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/95.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/95.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "purificacion",
+	      "last": "marin"
+	    },
+	    "location": {
+	      "street": "7508 avenida de castilla",
+	      "city": "gijón",
+	      "state": "comunidad valenciana",
+	      "postcode": 97880
+	    },
+	    "email": "purificacion.marin@example.com",
+	    "phone": "949-692-041",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/10.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/10.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/10.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "alexandro",
+	      "last": "da cruz"
+	    },
+	    "location": {
+	      "street": "5096 beco dos namorados",
+	      "city": "cuiabá",
+	      "state": "mato grosso",
+	      "postcode": 73905
+	    },
+	    "email": "alexandro.dacruz@example.com",
+	    "phone": "(64) 4144-0974",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/7.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/7.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/7.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "miss",
+	      "first": "esma",
+	      "last": "nalbantoğlu"
+	    },
+	    "location": {
+	      "street": "6286 talak göktepe cd",
+	      "city": "hakkâri",
+	      "state": "mardin",
+	      "postcode": 87309
+	    },
+	    "email": "esma.nalbantoğlu@example.com",
+	    "phone": "(550)-485-2703",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/30.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/30.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/30.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "alan",
+	      "last": "soto"
+	    },
+	    "location": {
+	      "street": "1802 park road",
+	      "city": "sheffield",
+	      "state": "avon",
+	      "postcode": "G6 0BD"
+	    },
+	    "email": "alan.soto@example.com",
+	    "phone": "016977 2759",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/70.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/70.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/70.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "júnia",
+	      "last": "ramos"
+	    },
+	    "location": {
+	      "street": "3797 rua quinze de novembro ",
+	      "city": "são joão de meriti",
+	      "state": "minas gerais",
+	      "postcode": 45423
+	    },
+	    "email": "júnia.ramos@example.com",
+	    "phone": "(84) 7989-2522",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/25.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/25.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/25.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "özsu",
+	      "last": "uluhan"
+	    },
+	    "location": {
+	      "street": "5486 tunalı hilmi cd",
+	      "city": "sakarya",
+	      "state": "İstanbul",
+	      "postcode": 53739
+	    },
+	    "email": "özsu.uluhan@example.com",
+	    "phone": "(815)-915-8164",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/11.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/11.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/11.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "kelly",
+	      "last": "harris"
+	    },
+	    "location": {
+	      "street": "5759 manor road",
+	      "city": "inverness",
+	      "state": "northamptonshire",
+	      "postcode": "FF78 3YD"
+	    },
+	    "email": "kelly.harris@example.com",
+	    "phone": "016973 20093",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/7.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/7.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/7.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "vedat",
+	      "last": "çankaya"
+	    },
+	    "location": {
+	      "street": "3818 atatürk sk",
+	      "city": "yalova",
+	      "state": "manisa",
+	      "postcode": 44440
+	    },
+	    "email": "vedat.çankaya@example.com",
+	    "phone": "(342)-162-2390",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/47.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/47.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/47.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "ms",
+	      "first": "marilyn",
+	      "last": "jenkins"
+	    },
+	    "location": {
+	      "street": "4969 country club rd",
+	      "city": "victorville",
+	      "state": "montana",
+	      "postcode": 21594
+	    },
+	    "email": "marilyn.jenkins@example.com",
+	    "phone": "(059)-293-3773",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/3.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/3.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/3.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "ifigênia",
+	      "last": "dias"
+	    },
+	    "location": {
+	      "street": "1243 rua são pedro ",
+	      "city": "campos dos goytacazes",
+	      "state": "mato grosso",
+	      "postcode": 73807
+	    },
+	    "email": "ifigênia.dias@example.com",
+	    "phone": "(88) 9564-5809",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/40.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/40.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/40.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "monsieur",
+	      "first": "angelo",
+	      "last": "blanchard"
+	    },
+	    "location": {
+	      "street": "3717 rue des chartreux",
+	      "city": "chapelle-sur-moudon",
+	      "state": "zug",
+	      "postcode": 8732
+	    },
+	    "email": "angelo.blanchard@example.com",
+	    "phone": "(132)-260-4114",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/72.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/72.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/72.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "arturo",
+	      "last": "navarro"
+	    },
+	    "location": {
+	      "street": "9593 calle mota",
+	      "city": "alcobendas",
+	      "state": "extremadura",
+	      "postcode": 65973
+	    },
+	    "email": "arturo.navarro@example.com",
+	    "phone": "902-420-272",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/95.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/95.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/95.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "adam",
+	      "last": "thomsen"
+	    },
+	    "location": {
+	      "street": "6153 kildeparken",
+	      "city": "ishoej",
+	      "state": "danmark",
+	      "postcode": 58048
+	    },
+	    "email": "adam.thomsen@example.com",
+	    "phone": "65384513",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/30.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/30.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/30.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "michelle",
+	      "last": "bachmann"
+	    },
+	    "location": {
+	      "street": "1874 mozartstraße",
+	      "city": "amberg-sulzbach",
+	      "state": "hamburg",
+	      "postcode": 39836
+	    },
+	    "email": "michelle.bachmann@example.com",
+	    "phone": "0980-8205191",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/62.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/62.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/62.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "elliot",
+	      "last": "harper"
+	    },
+	    "location": {
+	      "street": "6533 the crescent",
+	      "city": "oxford",
+	      "state": "borders",
+	      "postcode": "L7Z 7EU"
+	    },
+	    "email": "elliot.harper@example.com",
+	    "phone": "016977 1359",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/34.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/34.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/34.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mrs",
+	      "first": "olivia",
+	      "last": "meyer"
+	    },
+	    "location": {
+	      "street": "7720 mühlenweg",
+	      "city": "speyer",
+	      "state": "thüringen",
+	      "postcode": 80585
+	    },
+	    "email": "olivia.meyer@example.com",
+	    "phone": "0743-1880603",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/women/49.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/women/49.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/women/49.jpg"
+	    }
+	  },
+	  {
+	    "name": {
+	      "title": "mr",
+	      "first": "teobaldo",
+	      "last": "santos"
+	    },
+	    "location": {
+	      "street": "4352 rua duque de caxias ",
+	      "city": "umuarama",
+	      "state": "santa catarina",
+	      "postcode": 30870
+	    },
+	    "email": "teobaldo.santos@example.com",
+	    "phone": "(88) 2817-6217",
+	    "picture": {
+	      "large": "https://randomuser.me/api/portraits/men/79.jpg",
+	      "medium": "https://randomuser.me/api/portraits/med/men/79.jpg",
+	      "thumbnail": "https://randomuser.me/api/portraits/thumb/men/79.jpg"
+	    }
+	  }
+	];
+});
