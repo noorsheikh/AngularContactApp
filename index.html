@@ -29,7 +29,7 @@
 			<div class="w3-row-padding w3-content" ng-repeat="contact in contacts">
 				<div class="w3-col m12 w3-section">
 					<div class="w3-card-2 w3-center">
-						<img class="w3-circle w3-border" src="{{ contact.picture.large }}">
+						<img class="w3-circle w3-border" ng-src="{{ contact.picture.large }}">
 						<h1 class="w3-large capitalize">{{ contact.name.title}}. {{ contact.name.first }} {{ contact.name.last }}</h1>
 						<h2 class="w3-small capitalize">{{ contact.email }}</h2>
 						<h2 class="w3-small capitalize">{{ contact.phone }}</h2>
