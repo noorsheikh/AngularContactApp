@@ -1,8 +1,8 @@
 // Declare the module for the main ng-app directive
-var app = angular.module("contactApp", []);
+var contactController = angular.module("contactController", []);
 
-// Declare myController controller
-app.controller("myController", ['$scope', '$http', function($scope, $http) {
+// Declare ContactsController controller
+contactController.controller("ContactsController", ['$scope', '$http', function($scope, $http) {
 	$http.get("data/contacts.json").success(function(data) {
 		$scope.contacts = data;
 	});

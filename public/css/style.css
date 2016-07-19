@@ -5,3 +5,12 @@
 .contact {
 	padding-top: 10px;
 }
+
+.search {
+	padding-bottom: 10px;
+}
+
+.select {
+	padding: 0px;
+	width: auto;
+}
