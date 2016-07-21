@@ -1,0 +1,27 @@
+<section>
+	<div class="w3-row-padding w3-content" ng-model="contacts">
+		<div class="w3-col m12 w3-section">
+			<div class="w3-card-2 w3-padding contact">
+				<img class="w3-round w3-border" ng-src="{{ contacts[whichItem].picture.large }}">
+				<h1 class="w3-large capitalize">Full Name: <small>{{ contacts[whichItem].name.title}}. {{ contacts[whichItem].name.first }} {{ contacts[whichItem].name.last }}</small></h1>
+				<h2 class="w3-small capitalize">Contact Details:</h2>
+				<h2 class="w3-small capitalize">Email: <small>{{ contacts[whichItem].email }}</small></h2>
+				<h2 class="w3-small capitalize">Phone # <small>{{ contacts[whichItem].phone }}</small></h2>
+				<div class="w3-container w3-light-grey">
+					<h3 class="w3-medium capitalize">Full Address:</h3>
+					<h4 class="w3-medium capitalize">Street: <small>{{ contacts[whichItem].location.street }}, {{ contacts[whichItem].location.city }}</small></h4>
+					<h4 class="w3-medium capitalize">City: <small>{{ contacts[whichItem].location.city }}</small></h4>
+					<h4 class="w3-medium capitalize">State: <small>{{ contacts[whichItem].location.state }}</small></h4>
+					<h4 class="w3-medium capitalize">Post Code: <small>{{ contacts[whichItem].location.postcode }}</small></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="w3-row-padding w3-content" ng-model="contacts">
+		<div class="w3-col m12 w3-section">
+			<a class="w3-btn w3-wide" href="#/details/{{ prevItem }}">&lt;</a>
+			<a class="w3-btn w3-wide" href="#/details/{{ nextItem }}">&gt;</a>			
+			<a class="w3-btn w3-white w3-border w3-round" href="/angularcontactapp/#contacts">Go to Home Page</a>
+		</div>
+	</div>
+</section>

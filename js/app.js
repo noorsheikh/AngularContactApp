@@ -9,6 +9,10 @@ contactApp.config(['$routeProvider', function($routeProvider) {
 		templateUrl: 'partials/contacts.html',
 		controller: 'ContactsController'
 	}).
+	when('/details/:itemId', {
+		templateUrl: 'partials/contact-details.html',
+		controller: 'DetailsController'
+	}).
 	otherwise({
 		redirectTo: '/contacts'
 	});
